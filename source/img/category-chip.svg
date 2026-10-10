@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 600" preserveAspectRatio="xMidYMid slice" width="1600" height="600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FEFCF7"/>
+      <stop offset="1" stop-color="#F7F4EA"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FFF3C2" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#FFE9A0" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blob" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="70"/>
+    </filter>
+    <filter id="blobSm" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="600" fill="url(#bg)"/>
+
+  <!-- 弥散光斑 -->
+  <g filter="url(#blob)">
+    <ellipse cx="200" cy="90" rx="420" ry="260" fill="#FFD84D" opacity="0.6"/>
+    <ellipse cx="1340" cy="120" rx="400" ry="260" fill="#A9E8D7" opacity="0.55"/>
+    <ellipse cx="1480" cy="500" rx="420" ry="260" fill="#FFC7B0" opacity="0.5"/>
+    <ellipse cx="120" cy="540" rx="400" ry="260" fill="#A8D9FF" opacity="0.42"/>
+  </g>
+
+  <circle cx="430" cy="160" r="320" fill="url(#sun)"/>
+
+  <!-- 逻辑门：AND 门（左上） -->
+  <g opacity="0.15" fill="none" stroke="#1A1D29" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M195 205 L195 300 A 47.5 47.5 0 0 1 195 205 Z" fill="#FFFFFF" fill-opacity="0.5"/>
+    <line x1="160" y1="230" x2="195" y2="230"/>
+    <line x1="160" y1="275" x2="195" y2="275"/>
+    <line x1="242.5" y1="252.5" x2="272" y2="252.5"/>
+  </g>
+
+  <!-- 逻辑门：NOT 门（左上偏右） -->
+  <g opacity="0.15" fill="none" stroke="#1A1D29" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="335,205 335,300 400,252.5" fill="#FFFFFF" fill-opacity="0.5"/>
+    <line x1="310" y1="252.5" x2="335" y2="252.5"/>
+    <circle cx="410" cy="252.5" r="8" fill="#FFFFFF" fill-opacity="0.6"/>
+    <line x1="418" y1="252.5" x2="442" y2="252.5"/>
+  </g>
+
+  <!-- 芯片封装（左下，带引脚与内部 die） -->
+  <g opacity="0.16" fill="none" stroke="#1A1D29" stroke-width="4" stroke-linecap="round">
+    <rect x="150" y="370" width="150" height="150" rx="12" fill="#FFFFFF" fill-opacity="0.55"/>
+    <rect x="185" y="405" width="80" height="80" rx="10" fill="#1A1D29" fill-opacity="0.06" stroke-width="3"/>
+    <line x1="185" y1="370" x2="185" y2="342"/>
+    <line x1="225" y1="370" x2="225" y2="342"/>
+    <line x1="265" y1="370" x2="265" y2="342"/>
+    <line x1="185" y1="520" x2="185" y2="548"/>
+    <line x1="225" y1="520" x2="225" y2="548"/>
+    <line x1="265" y1="520" x2="265" y2="548"/>
+    <line x1="150" y1="405" x2="122" y2="405"/>
+    <line x1="150" y1="445" x2="122" y2="445"/>
+    <line x1="150" y1="485" x2="122" y2="485"/>
+    <line x1="300" y1="405" x2="328" y2="405"/>
+    <line x1="300" y1="445" x2="328" y2="445"/>
+    <line x1="300" y1="485" x2="328" y2="485"/>
+  </g>
+
+  <!-- 0101 二进制（右上） -->
+  <text x="1380" y="175" font-family="Space Grotesk, Menlo, Consolas, monospace" font-size="52" font-weight="700" fill="#1A1D29" opacity="0.16" text-anchor="middle">0101</text>
+  <text x="1380" y="225" font-family="Space Grotesk, Menlo, Consolas, monospace" font-size="52" font-weight="700" fill="#1A1D29" opacity="0.14" text-anchor="middle">1010</text>
+
+  <!-- 方波波形（右下，高频 + 低频） -->
+  <g opacity="0.15" fill="none" stroke="#1A1D29" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1210 400 L1210 372 L1238 372 L1238 400 L1266 400 L1266 372 L1294 372 L1294 400 L1322 400 L1322 372 L1350 372 L1350 400"/>
+    <path d="M1210 468 L1210 440 L1266 440 L1266 468 L1322 468 L1322 440 L1378 440 L1378 468"/>
+  </g>
+
+  <!-- 柔光粒子 -->
+  <g filter="url(#blobSm)">
+    <circle cx="700" cy="180" r="16" fill="#FFD84D" opacity="0.8"/>
+    <circle cx="560" cy="430" r="13" fill="#A9E8D7" opacity="0.8"/>
+    <circle cx="880" cy="300" r="11" fill="#FFC7B0" opacity="0.75"/>
+    <circle cx="1060" cy="180" r="9" fill="#A8D9FF" opacity="0.75"/>
+  </g>
+</svg>

@@ -13,11 +13,11 @@ nav:
   display_post_title: true
   fixed: true
 
-# 导航菜单：首页 / 前端开发 / 芯片基础知识 / 关于
+# 导航菜单：首页 / 前端开发知识 / 数字芯片基础知识 / 关于
 menu:
   首页: / || fas fa-home
-  前端开发: /categories/前端开发/ || fas fa-code
-  芯片基础知识: /categories/芯片基础知识/ || fas fa-microchip
+  前端开发知识: /categories/前端开发知识/ || fas fa-code
+  数字芯片基础知识: /categories/数字芯片基础知识/ || fas fa-microchip
   关于: /about/ || fas fa-user
 
 # --------------------------------------
@@ -37,24 +37,26 @@ code_blocks:
 # 社交链接
 # --------------------------------------
 social:
-  fab fa-github: https://github.com/ || GitHub || '#1a1d29'
-  fas fa-envelope: mailto:hello@example.com || Email || '#ffc700'
 
 # --------------------------------------
 # 图片设置
 # --------------------------------------
 favicon: /img/favicon.svg
 avatar:
-  img: /img/avatar.svg
+  img: /img/avatar3.jpg
   effect: false
 
 # 顶部大图
 disable_top_img: false
 default_top_img: /img/page-hero.svg
-index_img: /img/index-hero.svg
-archive_img: /img/page-hero.svg
-tag_img: /img/page-hero.svg
+index_img: /img/background.jpg
+archive_img: /img/archive-img.svg
+tag_img: /img/tag-img.svg
 category_img: /img/page-hero.svg
+# 每个分类单独的背景图（按分类设计，对象格式：分类名: 图片路径）
+category_per_img:
+  前端开发知识: /img/category-frontend.svg
+  数字芯片基础知识: /img/category-chip.svg
 
 # 网站背景（奶油白，配合 CSS 弥散光斑）
 background: '#FBF9F2'
@@ -68,7 +70,7 @@ cover:
 
 error_404:
   enable: true
-  subtitle: '页面走丢了 · 404'
+  subtitle: '页面走丢了哦 · 404'
   background: /img/page-hero.svg
 
 # --------------------------------------
@@ -101,8 +103,6 @@ subtitle:
   typed_option:
   source: false
   sub:
-    - 弥散光感 · 明快黄 ✨
-    - 前端开发与芯片知识的笔记
     - Keep shipping. ✨
 
 index_layout: 4
@@ -116,13 +116,13 @@ index_post_content:
 toc:
   post: true
   page: false
-  number: true
+  number: false
   expand: true
   style_simple: false
   scroll_percent: true
 
 post_copyright:
-  enable: true
+  enable: false
   decode: false
   author_href:
   license: CC BY-NC-SA 4.0
@@ -132,7 +132,7 @@ reward:
   enable: false
 
 related_post:
-  enable: true
+  enable: false
   limit: 6
   date_type: created
 
@@ -157,7 +157,7 @@ footer:
   copyright:
     enable: true
     version: true
-  custom_text: <span class="footer-dot"></span> 弥散光感 · 明快黄
+  custom_text: <span class="footer-dot"></span> hao's note
 
 # --------------------------------------
 # 侧边栏
@@ -174,15 +174,15 @@ aside:
     category: true
   card_author:
     enable: true
-    description: 写代码 · 画芯片 · 也研究金融量化。用明快黄与弥散光感，记录每一段成长。
+    description: 前端开发与芯片知识的笔记
     button:
-      enable: true
+      enable: false
       icon: fab fa-github
       text: Follow Me
       link: https://github.com/
   card_announcement:
     enable: true
-    content: 欢迎来到我的技术小站 🟡 前端开发 & 芯片基础知识，持续更新中。
+    content: 欢迎来到我的技术小站 🟡 前端开发知识 & 数字芯片基础知识，持续更新中。
   card_recent_post:
     enable: true
     limit: 5
@@ -270,6 +270,8 @@ search:
 # 分享
 share:
   use: sharejs
+  sharejs:
+    sites: wechat,weibo,qq
 
 # 评论
 comments:
@@ -311,7 +313,7 @@ mask:
   footer: false
 
 preloader:
-  enable: true
+  enable: false
   source: 1
 
 enter_transitions: false
@@ -388,9 +390,9 @@ css_prefix: true
 # --------------------------------------
 inject:
   head:
-    - <link rel="stylesheet" href="/css/custom.css">
+    - <link rel="stylesheet" href="/css/custom.css?v=6">
   bottom:
-    - <script src="/js/custom.js"></script>
+    - <script src="/js/custom.js?v=6"></script>
 
 # CDN
 CDN:

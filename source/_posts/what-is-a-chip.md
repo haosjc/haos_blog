@@ -7,7 +7,7 @@ tags:
   - 入门
   - 半导体
 categories:
-  - 芯片基础知识
+  - 数字芯片基础知识
 description: 芯片的起点是沙子里的二氧化硅。这篇文章用最直白的语言讲清楚集成电路的诞生逻辑。
 top_img: /img/page-hero.svg
 ---

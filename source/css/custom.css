@@ -30,7 +30,7 @@
   --font-color: #3B3F4A;
   --text-highlight-color: #3B3F4A;
   --card-bg: rgba(255, 255, 255, .58);
-  --card-meta: #9AA0AA;
+  --card-meta: #7A808C;
   --sidebar-bg: #FBF9F2;
   --card-box-shadow: 0 10px 40px -14px rgba(120, 100, 50, .20);
   --card-hover-box-shadow: 0 20px 55px -18px rgba(255, 170, 40, .38);
@@ -143,12 +143,23 @@ body {
 }
 
 /* ---------- 首屏 Hero ---------- */
+#site-info {
+  text-align: center;
+}
+
 #site-title {
   font-family: "Space Grotesk", "Noto Sans SC", sans-serif;
   font-weight: 700;
   letter-spacing: 1px;
   color: var(--m-ink);
   text-shadow: 0 2px 30px rgba(255, 255, 255, .7);
+  font-size: 3.7em;
+}
+
+@media screen and (min-width: 768px) {
+  #site-title {
+    font-size: 5.7em;
+  }
 }
 
 #site-subtitle {
@@ -167,6 +178,32 @@ body {
 .scroll-down-effects {
   color: var(--m-ink) !important;
   filter: drop-shadow(0 0 8px rgba(255, 199, 0, .6));
+}
+
+/* ---------- 内页标题栏（除主页大屏外） ---------- */
+/* 内页标题文字：亮色下深色，适配浅色弥散光背景 */
+#page-header:not(.full_page) #site-title,
+#page-header #post-info .post-title {
+  color: #3B3F4A;
+  text-shadow: 0 2px 24px rgba(255, 255, 255, .9);
+}
+
+/* 暗色模式：内页标题文字改为白色，并给背景加暗色遮罩 */
+[data-theme='dark'] #page-header:not(.full_page) #site-title,
+[data-theme='dark'] #page-header #post-info .post-title {
+  color: #ffffff;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, .5);
+}
+
+[data-theme='dark'] #page-header:not(.full_page)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .38);
+  pointer-events: none;
 }
 
 /* ---------- 卡片：玻璃拟态 ---------- */
@@ -253,7 +290,7 @@ a:hover {
   text-underline-offset: 3px;
 }
 
-/* ---------- 标签：柔和撞色胶囊 ---------- */
+/* ---------- 标签：柔和撞色胶囊（浅色背景 + !important 压过标签页的内联深色背景） ---------- */
 .tag-cloud-list a,
 .card-tag-cloud a,
 .post-meta__tags,
@@ -265,7 +302,7 @@ a:hover {
   border-radius: 999px;
   padding: 1px 11px;
   margin: 3px;
-  background: rgba(255, 255, 255, .55);
+  background-color: rgba(255, 255, 255, .55) !important;
   transition: all .2s ease;
 }
 
@@ -273,23 +310,23 @@ a:hover {
 .card-tag-cloud a:hover,
 .post-meta__tags:hover,
 .article-meta__tags:hover {
-  background: rgba(255, 199, 0, .22);
+  background-color: rgba(255, 199, 0, .3) !important;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px -8px var(--m-glow);
   color: var(--m-ink) !important;
 }
 
-/* 标签云柔和撞色 */
+/* 标签云柔和撞色（浅色系） */
 .tag-cloud-list a:nth-child(5n+1),
-.card-tag-cloud a:nth-child(5n+1) { background: rgba(255, 201, 224, .5); }
+.card-tag-cloud a:nth-child(5n+1) { background-color: rgba(255, 201, 224, .5) !important; }
 .tag-cloud-list a:nth-child(5n+2),
-.card-tag-cloud a:nth-child(5n+2) { background: rgba(168, 217, 255, .5); }
+.card-tag-cloud a:nth-child(5n+2) { background-color: rgba(168, 217, 255, .5) !important; }
 .tag-cloud-list a:nth-child(5n+3),
-.card-tag-cloud a:nth-child(5n+3) { background: rgba(169, 232, 215, .5); }
+.card-tag-cloud a:nth-child(5n+3) { background-color: rgba(169, 232, 215, .5) !important; }
 .tag-cloud-list a:nth-child(5n+4),
-.card-tag-cloud a:nth-child(5n+4) { background: rgba(207, 195, 255, .5); }
+.card-tag-cloud a:nth-child(5n+4) { background-color: rgba(207, 195, 255, .5) !important; }
 .tag-cloud-list a:nth-child(5n+5),
-.card-tag-cloud a:nth-child(5n+5) { background: rgba(255, 217, 138, .55); }
+.card-tag-cloud a:nth-child(5n+5) { background-color: rgba(255, 217, 138, .55) !important; }
 
 /* ---------- 分类列表 ---------- */
 .category-list a {
@@ -349,6 +386,11 @@ a:hover {
 /* ---------- 侧边栏卡片 ---------- */
 #aside-content .card-widget {
   border-radius: 22px;
+}
+
+/* 暂时隐藏公告栏 */
+.card-announcement {
+  display: none;
 }
 
 #aside-content .author-info__name {
@@ -463,14 +505,93 @@ a:hover {
   color: var(--m-ink);
 }
 
+/* ---------- 文章页元素 ---------- */
+
+/* 上一篇/下一篇：简化（去封面、去描述）+ 渐变背景 */
+#pagination.pagination-post .pagination-related .cover,
+#pagination.pagination-post .pagination-related img.cover {
+  display: none;
+}
+
+#pagination.pagination-post .pagination-related .info-2 {
+  display: none;
+}
+
+#pagination.pagination-post .pagination-related {
+  height: 90px;
+  background: linear-gradient(135deg, #FFF6D6, #FFE9B0);
+  border: 1px solid rgba(255, 255, 255, .7);
+}
+
+#pagination.pagination-post .pagination-related:hover .info-1 {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+
+#pagination.pagination-post .pagination-related .info-1 {
+  color: var(--m-ink);
+}
+
+#pagination.pagination-post .pagination-related .info-item-1 {
+  color: var(--m-ink-soft);
+}
+
+#pagination.pagination-post .pagination-related .info-item-2 {
+  color: var(--m-ink);
+}
+
+[data-theme='dark'] #pagination.pagination-post .pagination-related {
+  background: linear-gradient(135deg, rgba(255, 199, 0, .16), rgba(255, 199, 0, .05));
+  border-color: rgba(255, 255, 255, .1);
+}
+
+/* 文章页元信息（日期、分类、标签）颜色：亮色深、暗色浅 */
+#page-header #post-info #post-meta,
+#page-header #post-info #post-meta a,
+#page-header #post-info #post-meta time {
+  color: var(--m-ink-soft);
+}
+
 /* ---------- 深色模式适配 ---------- */
+
+/* 深色模式下恢复变量为暗色值（:root 的覆盖会破坏主题暗色模式，必须在此重写） */
+[data-theme='dark'] {
+  --global-bg: #121212;
+  --font-color: rgba(255, 255, 255, .85);
+  --text-highlight-color: rgba(255, 255, 255, .9);
+  --card-bg: #1a1c22;
+  --card-meta: rgba(255, 255, 255, .55);
+  --sidebar-bg: #121212;
+  --hr-border: rgba(255, 255, 255, .15);
+  --blockquote-color: rgba(255, 255, 255, .7);
+  --blockquote-bg: rgba(255, 255, 255, .06);
+  --toc-link-color: rgba(255, 255, 255, .6);
+
+  --m-ink: rgba(255, 255, 255, .88);
+  --m-ink-soft: rgba(255, 255, 255, .62);
+  --m-cream: #121212;
+  --glass-bg: rgba(26, 28, 34, .6);
+  --glass-border: rgba(255, 255, 255, .1);
+}
+
 [data-theme='dark'] #nav {
   background: rgba(24, 26, 32, .85);
   border-bottom-color: rgba(255, 255, 255, .1);
 }
 
-[data-theme='dark'] #menus .site-page {
-  color: #C9CDD6;
+/* 深色模式导航文字改为白色（加 #page-header 提升优先级，压过主题的 #page-header.nav-fixed #nav a） */
+[data-theme='dark'] #page-header #nav .site-name,
+[data-theme='dark'] #page-header #nav a.site-page,
+[data-theme='dark'] #page-header #nav span.site-page,
+[data-theme='dark'] #page-header #menus .site-page {
+  color: #ffffff;
+}
+
+[data-theme='dark'] #page-header #nav .site-name:hover,
+[data-theme='dark'] #page-header #nav a.site-page:hover,
+[data-theme='dark'] #page-header #nav span.site-page:hover,
+[data-theme='dark'] #page-header #menus .site-page:hover {
+  color: #ffffff;
 }
 
 [data-theme='dark'] .recent-post-item,

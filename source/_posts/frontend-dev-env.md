@@ -7,7 +7,7 @@ tags:
   - 工程化
   - 工具链
 categories:
-  - 前端开发
+  - 前端开发知识
 description: 从 Node 版本管理到构建工具，一步步搭起一个清爽、可维护的前端开发环境。
 top_img: /img/page-hero.svg
 ---

@@ -7,7 +7,7 @@ tags:
   - 物理
   - 入门
 categories:
-  - 芯片基础知识
+  - 数字芯片基础知识
 description: P 型、N 型半导体相遇会形成 PN 结——二极管与晶体管的工作基础。
 top_img: /img/page-hero.svg
 ---

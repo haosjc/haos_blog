@@ -7,7 +7,7 @@ tags:
   - 设计
   - 前端
 categories:
-  - 前端开发
+  - 前端开发知识
 description: 用纯 CSS 还原当下流行的弥散光感：渐变光斑、玻璃拟态与柔和光晕。
 top_img: /img/page-hero.svg
 ---
