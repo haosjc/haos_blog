@@ -1,0 +1,399 @@
+# =====================================================
+# Butterfly 主题配置 —— 弥散光感 · 明快黄
+# 说明：仅通过本配置文件与 source/ 下的自定义资源实现主题，
+#       不修改 hexo 框架 / butterfly 主题源码。
+# =====================================================
+
+# --------------------------------------
+# 导航栏
+# --------------------------------------
+nav:
+  logo:
+  display_title: true
+  display_post_title: true
+  fixed: true
+
+# 导航菜单：首页 / 前端开发 / 芯片基础知识 / 关于
+menu:
+  首页: / || fas fa-home
+  前端开发: /categories/前端开发/ || fas fa-code
+  芯片基础知识: /categories/芯片基础知识/ || fas fa-microchip
+  关于: /about/ || fas fa-user
+
+# --------------------------------------
+# 代码块
+# --------------------------------------
+code_blocks:
+  theme: light
+  macStyle: true
+  height_limit: false
+  word_wrap: false
+  copy: true
+  language: true
+  shrink: false
+  fullpage: false
+
+# --------------------------------------
+# 社交链接
+# --------------------------------------
+social:
+  fab fa-github: https://github.com/ || GitHub || '#1a1d29'
+  fas fa-envelope: mailto:hello@example.com || Email || '#ffc700'
+
+# --------------------------------------
+# 图片设置
+# --------------------------------------
+favicon: /img/favicon.svg
+avatar:
+  img: /img/avatar.svg
+  effect: false
+
+# 顶部大图
+disable_top_img: false
+default_top_img: /img/page-hero.svg
+index_img: /img/index-hero.svg
+archive_img: /img/page-hero.svg
+tag_img: /img/page-hero.svg
+category_img: /img/page-hero.svg
+
+# 网站背景（奶油白，配合 CSS 弥散光斑）
+background: '#FBF9F2'
+
+# 封面
+cover:
+  index_enable: true
+  aside_enable: true
+  archives_enable: true
+  default_cover:
+
+error_404:
+  enable: true
+  subtitle: '页面走丢了 · 404'
+  background: /img/page-hero.svg
+
+# --------------------------------------
+# 文章元信息
+# --------------------------------------
+post_meta:
+  page:
+    date_type: created
+    date_format: date
+    categories: true
+    tags: false
+    label: true
+  post:
+    position: left
+    date_type: both
+    date_format: date
+    categories: true
+    tags: true
+    label: true
+
+# --------------------------------------
+# 首页设置
+# --------------------------------------
+index_site_info_top:
+index_top_img_height: 100vh
+
+subtitle:
+  enable: true
+  effect: true
+  typed_option:
+  source: false
+  sub:
+    - 弥散光感 · 明快黄 ✨
+    - 前端开发与芯片知识的笔记
+    - Keep shipping. ✨
+
+index_layout: 4
+index_post_content:
+  method: 3
+  length: 500
+
+# --------------------------------------
+# 文章设置
+# --------------------------------------
+toc:
+  post: true
+  page: false
+  number: true
+  expand: true
+  style_simple: false
+  scroll_percent: true
+
+post_copyright:
+  enable: true
+  decode: false
+  author_href:
+  license: CC BY-NC-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+reward:
+  enable: false
+
+related_post:
+  enable: true
+  limit: 6
+  date_type: created
+
+post_pagination: 1
+
+noticeOutdate:
+  enable: true
+  style: flat
+  limit_day: 365
+  position: top
+  message_prev: 距离上次更新已过去
+  message_next: 天，文章内容可能已过时。
+
+# --------------------------------------
+# 页脚
+# --------------------------------------
+footer:
+  nav:
+  owner:
+    enable: true
+    since: 2025
+  copyright:
+    enable: true
+    version: true
+  custom_text: <span class="footer-dot"></span> 弥散光感 · 明快黄
+
+# --------------------------------------
+# 侧边栏
+# --------------------------------------
+aside:
+  enable: true
+  hide: false
+  button: true
+  mobile: true
+  position: right
+  display:
+    archive: true
+    tag: true
+    category: true
+  card_author:
+    enable: true
+    description: 写代码 · 画芯片 · 也研究金融量化。用明快黄与弥散光感，记录每一段成长。
+    button:
+      enable: true
+      icon: fab fa-github
+      text: Follow Me
+      link: https://github.com/
+  card_announcement:
+    enable: true
+    content: 欢迎来到我的技术小站 🟡 前端开发 & 芯片基础知识，持续更新中。
+  card_recent_post:
+    enable: true
+    limit: 5
+    sort: date
+    sort_order:
+  card_newest_comments:
+    enable: false
+  card_categories:
+    enable: true
+    limit: 8
+    expand: none
+    sort_order:
+  card_tags:
+    enable: true
+    limit: 40
+    color: false
+    custom_colors:
+    orderby: random
+    order: 1
+    sort_order:
+  card_archives:
+    enable: true
+    type: monthly
+    format: MMMM YYYY
+    order: -1
+    limit: 8
+    sort_order:
+  card_post_series:
+    enable: true
+    series_title: false
+    orderBy: 'date'
+    order: -1
+  card_webinfo:
+    enable: true
+    post_count: true
+    last_push_date: true
+    sort_order:
+    runtime_date:
+
+# --------------------------------------
+# 右下角按钮
+# --------------------------------------
+rightside_bottom:
+translate:
+  enable: false
+readmode: true
+
+darkmode:
+  enable: true
+  button: true
+  autoChangeMode: false
+  start:
+  end:
+
+rightside_scroll_percent: true
+rightside_config_animation: true
+
+# --------------------------------------
+# 全局
+# --------------------------------------
+anchor:
+  auto_update: false
+  click_to_scroll: false
+
+photofigcaption: false
+copy:
+  enable: true
+  copyright:
+    enable: false
+    limit_count: 150
+
+wordcount:
+  enable: false
+
+busuanzi:
+  site_uv: false
+  site_pv: false
+  page_pv: false
+
+# 搜索
+search:
+  use:
+  placeholder:
+
+# 分享
+share:
+  use: sharejs
+
+# 评论
+comments:
+  use:
+  text: true
+  lazyload: false
+  count: false
+  card_post_count: false
+
+# --------------------------------------
+# 美化 / 动效
+# --------------------------------------
+# 主题色（明快黄 + 弥散光感的柔和点缀）
+theme_color:
+  enable: true
+  main: "#FFC700"
+  paginator: "#F5B301"
+  button_hover: "#F5B301"
+  text_selection: "#FFE9B0"
+  link_color: "#C08A00"
+  meta_color: "#9AA0AA"
+  hr_color: "#FFE9B0"
+  code_foreground: "#E07A5F"
+  code_background: "rgba(60, 60, 70, .05)"
+  toc_color: "#E8A200"
+  blockquote_padding_color: "#FFC700"
+  blockquote_background_color: "#FFF4D6"
+  scrollbar_color: "#F5C518"
+  meta_theme_color_light: "#FBF9F2"
+  meta_theme_color_dark: "#0d0d0d"
+
+category_ui: index
+tag_ui: index
+rounded_corners_ui: true
+text_align_justify: false
+
+mask:
+  header: false
+  footer: false
+
+preloader:
+  enable: true
+  source: 1
+
+enter_transitions: false
+display_mode: light
+
+beautify:
+  enable: false
+
+# 全局字体
+font:
+  global_font_size: 16px
+  code_font_size: 14px
+  font_family: '"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif'
+  code_font_family: '"JetBrains Mono","Fira Code",Consolas,Monaco,"Courier New",monospace'
+
+# 站点标题字体（几何感，契合孟菲斯）
+blog_title_font:
+  font_link: https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap
+  font_family: '"Space Grotesk","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif'
+
+# 分隔线图标
+hr_icon:
+  enable: true
+  icon: '\f0c8'
+  icon_top: '\f111'
+
+# 背景动效
+canvas_ribbon:
+  enable: false
+canvas_fluttering_ribbon:
+  enable: false
+canvas_nest:
+  enable: false
+fireworks:
+  enable: false
+click_heart:
+  enable: false
+clickShowText:
+  enable: false
+
+# --------------------------------------
+# 其它
+# --------------------------------------
+lightbox: fancybox
+series:
+  enable: false
+mermaid:
+  enable: true
+  code_write: false
+  theme:
+    light: default
+    dark: dark
+  open_in_new_tab: true
+  zoom_pan: true
+chartjs:
+  enable: false
+
+pjax:
+  enable: false
+instantpage: false
+lazyload:
+  enable: true
+  native: true
+  field: site
+
+Open_Graph_meta:
+  enable: true
+structured_data:
+  enable: false
+css_prefix: true
+
+# --------------------------------------
+# 注入自定义资源（实现主题的关键，不改框架代码）
+# --------------------------------------
+inject:
+  head:
+    - <link rel="stylesheet" href="/css/custom.css">
+  bottom:
+    - <script src="/js/custom.js"></script>
+
+# CDN
+CDN:
+  internal_provider: local
+  third_party_provider: jsdelivr
+  version: true

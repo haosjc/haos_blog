@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 600" preserveAspectRatio="xMidYMid slice" width="1600" height="600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FDFCF7"/>
+      <stop offset="1" stop-color="#FBF6EA"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#FFF3C2" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#FFE9A0" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blob" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="70"/>
+    </filter>
+    <filter id="blobMd" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="600" fill="url(#bg)"/>
+
+  <!-- 弥散光斑 -->
+  <g filter="url(#blob)">
+    <ellipse cx="200" cy="80" rx="340" ry="240" fill="#FFD84D" opacity="0.5"/>
+    <ellipse cx="1380" cy="120" rx="340" ry="240" fill="#FFB48A" opacity="0.5"/>
+    <ellipse cx="1450" cy="520" rx="360" ry="240" fill="#C9BFFF" opacity="0.5"/>
+    <ellipse cx="120" cy="520" rx="340" ry="240" fill="#9FE0CE" opacity="0.5"/>
+  </g>
+
+  <circle cx="420" cy="160" r="280" fill="url(#sun)"/>
+
+  <!-- 柔光光束 -->
+  <g opacity="0.5">
+    <path d="M420 160 L280 600 L440 600 Z" fill="#FFE9A0" opacity="0.12"/>
+  </g>
+
+  <!-- 漂浮柔光粒子 -->
+  <g filter="url(#blobMd)">
+    <circle cx="700" cy="180" r="22" fill="#FFD98A" opacity="0.8"/>
+    <circle cx="1100" cy="150" r="18" fill="#FFC7B0" opacity="0.8"/>
+    <circle cx="1300" cy="240" r="14" fill="#A8D9FF" opacity="0.7"/>
+    <circle cx="900" cy="420" r="18" fill="#CFC3FF" opacity="0.7"/>
+    <circle cx="560" cy="460" r="16" fill="#FFC9E0" opacity="0.7"/>
+  </g>
+</svg>
