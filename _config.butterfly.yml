@@ -391,9 +391,9 @@ css_prefix: true
 # --------------------------------------
 inject:
   head:
-    - <link rel="stylesheet" href="/css/custom.css?v=6">
+    - <link rel="stylesheet" href="/haos_blog/css/custom.css?v=6">
   bottom:
-    - <script src="/js/custom.js?v=6"></script>
+    - <script src="/haos_blog/js/custom.js?v=6"></script>
 
 # CDN
 CDN:
