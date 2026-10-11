@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hao的数字芯片博客
+title: Hao的数字芯片笔记
 subtitle: '前端开发 · 芯片知识 · 技术笔记'
-description: '一个记录数字芯片设计知识的技术博客'
+description: '一个记录数字芯片设计知识的博客'
 keywords: '前端开发,数字芯片设计,集成电路'
 author: Hao
 language: zh-CN
@@ -40,7 +40,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 syntax_highlighter: highlight.js
@@ -54,6 +54,10 @@ prismjs:
   preprocess: true
   line_number: true
   tab_replace: ''
+
+# Markdown 渲染（关闭 prependRoot，交由 scripts/asset-image.js 处理资源图片相对路径）
+marked:
+  prependRoot: false
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
